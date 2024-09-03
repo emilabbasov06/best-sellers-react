@@ -1,10 +1,29 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-function Greeting() {
-  return <h2>Hello, World!</h2>;
+import './index.css';
+
+function BookList() {
+  return (
+    <section className='booklist'>
+      <Book />
+    </section>
+  );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+function Book() {
+  const title = 'Good Energy';
+  const author = 'Calley Means';
 
-root.render(<Greeting />);
+  return (
+    <article className='book'>
+      <img src='./images/book-1.jpg' alt='Good Energy' />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
+    </article>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(<BookList />);
